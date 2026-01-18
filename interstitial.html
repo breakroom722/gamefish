@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Loading game…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      background: #0f1220;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .box {
+      background: #151933;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 420px;
+    }
+    .loader {
+      margin: 20px auto;
+      width: 40px;
+      height: 40px;
+      border: 4px solid #333;
+      border-top: 4px solid #4f7cff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Loading game…</h2>
+    <p>Your game will start shortly</p>
+
+    <!-- AD SCRIPT GOES HERE -->
+    <div style="margin:15px 0;">
+      <em>Advertisement</em>
+    </div>
+
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get("go");
+
+    setTimeout(() => {
+      if (target) {
+        window.location.href = target;
+      }
+    }, 4000);
+  </script>
+
+</body>
+</html>
