@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Loading game…</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       margin: 0;
@@ -37,6 +36,15 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    .ad {
+      margin: 15px 0;
+      padding: 10px;
+      background: #0b0e24;
+      border: 1px dashed #333;
+      border-radius: 8px;
+      color: #ccc;
+      font-size: 13px;
+    }
   </style>
 </head>
 <body>
@@ -45,9 +53,9 @@
     <h2>Loading game…</h2>
     <p>Your game will start shortly</p>
 
-    <!-- AD SCRIPT GOES HERE -->
-    <div style="margin:15px 0;">
-      <em>Advertisement</em>
+    <!-- AD SLOT -->
+    <div class="ad" id="ad-slot">
+      <!-- Real ad network script goes here -->
     </div>
 
     <div class="loader"></div>
@@ -57,6 +65,20 @@
     const params = new URLSearchParams(window.location.search);
     const target = params.get("go");
 
+    // Cooldown logic: show ad only once per game per session
+    const adKey = 'adShown_' + target;
+    if (!sessionStorage.getItem(adKey)) {
+      sessionStorage.setItem(adKey, 'true');
+
+      // Insert your real ad script here
+      // Example placeholder for a network like Adsterra or PropellerAds:
+      const adSlot = document.getElementById('ad-slot');
+      adSlot.innerHTML = '<iframe src="https://example-ad-network.com/ad.html" width="300" height="250" frameborder="0"></iframe>';
+    } else {
+      document.getElementById('ad-slot').innerHTML = 'Advertisement already shown';
+    }
+
+    // Redirect to the actual game after 4 seconds
     setTimeout(() => {
       if (target) {
         window.location.href = target;
