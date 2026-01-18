@@ -17,40 +17,45 @@ body, html {
   overflow: hidden;
 }
 
+/* Elite arcade frame */
 .arcade-frame {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 12px solid #ff3ec1;
-  box-shadow: 0 0 20px #ff3ec1, 0 0 40px #00fff7;
-  background: #07071f;
+  border: 20px solid #ff3ec1;
+  border-radius: 12px;
+  box-shadow:
+    0 0 30px #ff3ec1,
+    0 0 60px #00fff7,
+    0 0 90px #ff3ec1;
+  background: linear-gradient(145deg, #07071f, #111133);
 }
 
+/* Header */
 header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 60px;
   background: linear-gradient(90deg, #111133, #05050f);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  box-sizing: border-box;
-  border-bottom: 3px solid #00fff7;
+  border-bottom: 4px solid #00fff7;
   z-index: 999;
 }
 
 header h1 {
-  font-size: 12px;
+  font-size: 14px;
   color: #00fff7;
-  text-shadow: 0 0 8px #00fff7;
+  text-shadow: 0 0 12px #00fff7;
 }
 
 header button {
   font-family: "Press Start 2P";
-  font-size: 10px;
+  font-size: 12px;
   padding: 6px 10px;
   background: #ff3ec1;
   color: black;
@@ -59,12 +64,28 @@ header button {
   cursor: pointer;
 }
 
+/* Ad banner */
+#ad-slot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(255,255,255,0.05);
+  border-top: 2px solid #ff3ec1;
+  text-align: center;
+  line-height: 60px;
+  font-size: 12px;
+  color: #fff;
+  z-index: 998;
+}
+
+/* Game iframe */
 iframe {
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 0;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 120px); /* header + ad */
   border: none;
 }
 </style>
@@ -78,8 +99,10 @@ iframe {
     <button onclick="window.location.href='../index.html'">BACK TO ARCADE</button>
   </header>
 
-  <!-- Pull Moto X3M from your Cloudfront hub -->
-  <iframe src="https://dnrweqffuwjtx.cloudfront.net/motox3m" allowfullscreen></iframe>
+  <div id="ad-slot">ADVERTISEMENT</div>
+
+  <!-- Game iframe -->
+  <iframe src="https://dnrweqffuwjtx.cloudfront.net/moto-x3m/" allowfullscreen></iframe>
 </div>
 
 </body>
