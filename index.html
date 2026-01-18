@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classroom Games | Play Unblocked Games</title>
+  <meta name="description" content="Play unblocked games at school. Fast, free, no downloads." />
+
+  <!-- Basic styling -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f1220;
+      color: #fff;
+    }
+    header {
+      padding: 16px;
+      background: #151933;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .container {
+      padding: 16px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 14px;
+    }
+    .game-card {
+      background: #1b2045;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .game-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+    .game-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .game-card h3 {
+      font-size: 14px;
+      margin: 8px 0 0;
+      text-align: center;
+    }
+
+    /* Ad placeholders */
+    .ad {
+      background: #0b0e24;
+      border: 1px dashed #333;
+      padding: 12px;
+      text-align: center;
+      color: #777;
+      margin: 20px 0;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Classroom Games</h1>
+  <nav>
+    <span>Action</span> · <span>Car</span> · <span>Sports</span> · <span>New</span>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="ad">Banner Ad (Homepage)</div>
+
+  <div class="grid">
+    <div class="game-card" onclick="openGame('games/run3.html')">
+      <img src="https://via.placeholder.com/300x200" alt="Run 3" />
+      <h3>Run 3</h3>
+    </div>
+    <div class="game-card" onclick="openGame('games/motox3m.html')">
+      <img src="https://via.placeholder.com/300x200" alt="Moto X3M" />
+      <h3>Moto X3M</h3>
+    </div>
+    <div class="game-card" onclick="openGame('games/driftboss.html')">
+      <img src="https://via.placeholder.com/300x200" alt="Drift Boss" />
+      <h3>Drift Boss</h3>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Classroom Games · No downloads · Just play
+</footer>
+
+<script>
+  function openGame(url) {
+    // Interstitial hook (we add monetization logic here later)
+    window.location.href = url;
+  }
+</script>
+
+</body>
+</html>
