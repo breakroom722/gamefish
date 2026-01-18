@@ -3,25 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Run 3</title>
+  <title>Run 3 | Classroom Games</title>
   <style>
-    body { 
-      margin: 0; 
-      background: #0f1220; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      height: 100vh; 
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background: #0f1220;
+      color: #fff;
     }
-    iframe { 
-      width: 100%; 
-      height: 100%; 
-      border: none; 
+    header {
+      background: #151933;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+    header button {
+      background: #1b2045;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+    footer {
+      background: #151933;
+      text-align: center;
+      padding: 6px;
+      font-size: 12px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <!-- Run 3 embedded from unblocked mirror -->
-  <iframe src="https://dnrweqffuwjtx.cloudfront.net/run-3/" allowfullscreen></iframe>
+
+<header>
+  <h1>Classroom Games</h1>
+  <button onclick="window.location.href='../index.html'">Back to Homepage</button>
+</header>
+
+<!-- Game iframe -->
+<iframe src="https://dnrweqffuwjtx.cloudfront.net/run-3/" allowfullscreen></iframe>
+
+<footer>
+  Enjoy playing! All games playable at school.
+</footer>
+
 </body>
 </html>
