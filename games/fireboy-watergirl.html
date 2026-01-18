@@ -3,22 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fireboy & Watergirl | Classroom Games</title>
+<title>FIREBOY & WATERGIRL | Classroom Arcade</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 <style>
-body, html { margin:0; padding:0; height:100%; display:flex; flex-direction:column; font-family:Arial,sans-serif; background:#0f1220; color:#fff; }
-header { background:#151933; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
-header h1 { margin:0; font-size:18px; }
-header button { background:#1b2045; color:#fff; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; }
-iframe { flex:1; width:100%; border:none; }
-footer { background:#151933; text-align:center; padding:6px; font-size:12px; color:#aaa; }
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #0b0b1a;
+  font-family: "Press Start 2P", Arial, sans-serif;
+  overflow: hidden;
+}
+
+.arcade-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 16px solid #ff3ec1;
+  box-shadow: 0 0 25px #ff3ec1, 0 0 50px #00fff7;
+  background: #07071f;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(90deg, #111133, #05050f);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-bottom: 4px solid #00fff7;
+  z-index: 999;
+}
+
+header h1 {
+  font-size: 14px;
+  color: #00fff7;
+  text-shadow: 0 0 10px #00fff7;
+}
+
+header button {
+  font-family: "Press Start 2P";
+  font-size: 12px;
+  padding: 6px 10px;
+  background: #ff3ec1;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Space for ad banner */
+#ad-slot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(255,255,255,0.05);
+  border-top: 2px solid #ff3ec1;
+  text-align: center;
+  line-height: 60px;
+  font-size: 12px;
+  color: #fff;
+  z-index: 998;
+}
+
+iframe {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 120px); /* Header + ad slot */
+  border: none;
+}
 </style>
 </head>
+
 <body>
-<header>
-<h1>Classroom Games</h1>
-<button onclick="window.location.href='../index.html'">Back to Homepage</button>
-</header>
-<iframe src="https://ubg95.github.io/Fireboy-And-Watergirl-1/" allowfullscreen></iframe>
-<footer>Enjoy playing! All games playable at school.</footer>
+
+<div class="arcade-frame">
+  <header>
+    <h1>CLASSROOM ARCADE</h1>
+    <button onclick="window.location.href='../index.html'">BACK TO ARCADE</button>
+  </header>
+
+  <div id="ad-slot">ADVERTISEMENT</div>
+
+  <!-- Hub iframe: auto-select working hub -->
+  <iframe id="game-frame" allowfullscreen></iframe>
+</div>
+
+<script>
+const hubs = [
+  "https://dnrweqffuwjtx.cloudfront.net/fireboy-watergirl",
+  "https://classroomx6.github.io/fireboy-watergirl.html"
+];
+
+const iframe = document.getElementById('game-frame');
+
+function testHub(index) {
+  if(index >= hubs.length) {
+    iframe.src = hubs[0]; // fallback if all fail
+    return;
+  }
+  
+  // Simple way: try loading by setting src, fallback after 1s if error
+  iframe.src = hubs[index];
+  iframe.onload = function() {
+    console.log("Hub loaded:", hubs[index]);
+  };
+  iframe.onerror = function() {
+    console.warn("Hub failed, trying next:", hubs[index]);
+    testHub(index + 1);
+  };
+}
+
+testHub(0);
+</script>
+
 </body>
 </html>
