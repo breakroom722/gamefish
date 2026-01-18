@@ -112,8 +112,7 @@
 
 <script>
   function openGame(url) {
-    // Interstitial hook (we add monetization logic here later)
-    window.location.href = url;
+    window.location.href = "interstitial.html?go=" + encodeURIComponent(url);
   }
 </script>
 
