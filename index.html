@@ -1,158 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classroom Games | Play Unblocked Games</title>
-  <meta name="description" content="Play unblocked games at school. Fast, free, no downloads." />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f1220;
-      color: #fff;
-    }
-    header {
-      padding: 16px;
-      background: #151933;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      font-size: 20px;
-      margin: 0;
-    }
-    .container {
-      padding: 16px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 14px;
-    }
-    .game-card {
-      background: #1b2045;
-      border-radius: 10px;
-      padding: 10px;
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .game-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-    }
-    .game-card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .game-card h3 {
-      font-size: 14px;
-      margin: 8px 0 0;
-      text-align: center;
-    }
-    .ad {
-      background: #0b0e24;
-      border: 1px dashed #333;
-      padding: 12px;
-      text-align: center;
-      color: #777;
-      margin: 20px 0;
-      border-radius: 8px;
-      font-size: 13px;
-    }
-    footer {
-      padding: 20px;
-      text-align: center;
-      font-size: 12px;
-      color: #aaa;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLASSROOM ARCADE</title>
+
+<!-- Retro Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --neon-pink: #ff3ec1;
+  --neon-cyan: #00fff7;
+  --neon-yellow: #fff500;
+  --bg-dark: #0b0b1a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(circle at top, #1b1b3a, var(--bg-dark));
+  font-family: Orbitron, Arial, sans-serif;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 30px 15px;
+  background: linear-gradient(180deg, #111133, #05050f);
+  border-bottom: 4px solid var(--neon-pink);
+  box-shadow: 0 0 25px var(--neon-pink);
+}
+
+header h1 {
+  font-family: "Press Start 2P";
+  font-size: 22px;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+header p {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--neon-yellow);
+  animation: blink 1.6s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+.arcade-banner {
+  text-align: center;
+  margin-bottom: 24px;
+  font-family: "Press Start 2P";
+  font-size: 12px;
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px var(--neon-pink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  background: linear-gradient(145deg, #14144d, #07071f);
+  border: 3px solid var(--neon-cyan);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 0 12px rgba(0,255,247,0.3);
+}
+
+.game-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow:
+    0 0 15px var(--neon-cyan),
+    0 0 30px var(--neon-pink);
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 6px;
+  border: 2px solid #000;
+}
+
+.game-card h3 {
+  text-align: center;
+  margin: 10px 0 0;
+  font-size: 12px;
+  font-family: "Press Start 2P";
+  color: var(--neon-yellow);
+  text-shadow: 0 0 6px var(--neon-yellow);
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+  border-top: 2px solid var(--neon-pink);
+}
+
+footer span {
+  color: var(--neon-cyan);
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Classroom Games</h1>
-  <nav>
-    <span>Action</span> · <span>Car</span> · <span>Sports</span> · <span>New</span>
-  </nav>
+  <h1>CLASSROOM ARCADE</h1>
+  <p>INSERT COIN TO PLAY</p>
 </header>
 
 <div class="container">
-  <div class="ad">Banner Ad (Homepage)</div>
+
+  <div class="arcade-banner">
+    ⚡ UNBLOCKED • FREE • NO DOWNLOADS ⚡
+  </div>
 
   <div class="grid">
-    <!-- Run 3 -->
+
     <div class="game-card" onclick="openGame('games/run3.html')">
-      <img src="thumbnails/run3.png" alt="Run 3" />
-      <h3>Run 3</h3>
+      <img src="thumbnails/run3.png">
+      <h3>RUN 3</h3>
     </div>
 
-    <!-- Moto X3M -->
-    <div class="game-card" onclick="openGame('games/motox3m.html')">
-      <img src="thumbnails/motox3m.png" alt="Moto X3M" />
-      <h3>Moto X3M</h3>
+    <div class="game-card" onclick="openGame('games/google-snake.html')">
+      <img src="thumbnails/google-snake.png">
+      <h3>GOOGLE SNAKE</h3>
     </div>
 
-    <!-- Drift Boss -->
-    <div class="game-card" onclick="openGame('games/driftboss.html')">
-      <img src="thumbnails/driftboss.png" alt="Drift Boss" />
-      <h3>Drift Boss</h3>
+    <div class="game-card" onclick="openGame('games/paperio.html')">
+      <img src="thumbnails/paperio.png">
+      <h3>PAPER.IO</h3>
     </div>
 
-    <!-- Basketball Stars -->
-    <div class="game-card" onclick="openGame('games/basketballstars.html')">
-      <img src="thumbnails/basketballstars.png" alt="Basketball Stars" />
-      <h3>Basketball Stars</h3>
-    </div>
-
-    <!-- Fireboy & Watergirl -->
-    <div class="game-card" onclick="openGame('games/fireboy-watergirl.html')">
-      <img src="thumbnails/fireboy-watergirl.png" alt="Fireboy & Watergirl" />
-      <h3>Fireboy & Watergirl</h3>
-    </div>
-
-    <!-- Duck Life -->
-    <div class="game-card" onclick="openGame('games/ducklife.html')">
-      <img src="thumbnails/ducklife.png" alt="Duck Life" />
-      <h3>Duck Life</h3>
-    </div>
-
-    <!-- NEW: Slope -->
-    <div class="game-card" onclick="openGame('games/slope.html')">
-      <img src="thumbnails/slope.png" alt="Slope" />
-      <h3>Slope</h3>
-    </div>
-
-    <!-- NEW: Tetris -->
-    <div class="game-card" onclick="openGame('games/tetris.html')">
-      <img src="thumbnails/tetris.png" alt="Tetris" />
-      <h3>Tetris</h3>
-    </div>
-
-    <!-- NEW: Agar.io -->
-    <div class="game-card" onclick="openGame('games/agario.html')">
-      <img src="thumbnails/agario.png" alt="Agar.io" />
-      <h3>Agar.io</h3>
+    <div class="game-card" onclick="openGame('games/stickman-hook.html')">
+      <img src="thumbnails/stickman-hook.png">
+      <h3>STICKMAN HOOK</h3>
     </div>
 
   </div>
+
 </div>
 
 <footer>
-  © 2026 Classroom Games · No downloads · Just play
+  © 2026 <span>CLASSROOM ARCADE</span> • PRESS START
 </footer>
 
 <script>
-  function openGame(gamePath) {
-    // Send user through interstitial first
-    window.location.href = "interstitial.html?go=" + encodeURIComponent(gamePath);
-  }
+function openGame(path) {
+  window.location.href = "interstitial.html?go=" + encodeURIComponent(path);
+}
 </script>
 
 </body>
