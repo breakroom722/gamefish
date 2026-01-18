@@ -85,27 +85,27 @@
 
   <div class="grid">
     <div class="game-card" onclick="openGame('games/run3.html')">
-      <img src="https://via.placeholder.com/300x200" alt="Run 3" />
+      <img src="https://via.placeholder.com/300x200?text=Run+3" alt="Run 3" />
       <h3>Run 3</h3>
     </div>
     <div class="game-card" onclick="openGame('games/motox3m.html')">
-      <img src="https://via.placeholder.com/300x200" alt="Moto X3M" />
+      <img src="https://via.placeholder.com/300x200?text=Moto+X3M" alt="Moto X3M" />
       <h3>Moto X3M</h3>
     </div>
     <div class="game-card" onclick="openGame('games/driftboss.html')">
-      <img src="https://via.placeholder.com/300x200" alt="Drift Boss" />
+      <img src="https://via.placeholder.com/300x200?text=Drift+Boss" alt="Drift Boss" />
       <h3>Drift Boss</h3>
     </div>
     <div class="game-card" onclick="openGame('games/basketballstars.html')">
-      <img src="https://via.placeholder.com/300x200" alt="Basketball Stars" />
+      <img src="https://via.placeholder.com/300x200?text=Basketball+Stars" alt="Basketball Stars" />
       <h3>Basketball Stars</h3>
     </div>
     <div class="game-card" onclick="openGame('games/fireboy-watergirl.html')">
-      <img src="https://via.placeholder.com/300x200" alt="Fireboy & Watergirl" />
+      <img src="https://via.placeholder.com/300x200?text=Fireboy+%26+Watergirl" alt="Fireboy & Watergirl" />
       <h3>Fireboy & Watergirl</h3>
     </div>
     <div class="game-card" onclick="openGame('games/ducklife.html')">
-      <img src="https://via.placeholder.com/300x200" alt="Duck Life" />
+      <img src="https://via.placeholder.com/300x200?text=Duck+Life" alt="Duck Life" />
       <h3>Duck Life</h3>
     </div>
   </div>
@@ -116,9 +116,9 @@
 </footer>
 
 <script>
-  function openGame(url) {
-    // Sends user through the interstitial page
-    window.location.href = "interstitial.html?go=" + encodeURIComponent(url);
+  function openGame(gamePath) {
+    // Send user through interstitial first
+    window.location.href = "interstitial.html?go=" + encodeURIComponent(gamePath);
   }
 </script>
 
