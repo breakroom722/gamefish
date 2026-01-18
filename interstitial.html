@@ -55,7 +55,7 @@
 
     <!-- AD SLOT -->
     <div class="ad" id="ad-slot">
-      <!-- Real ad network script goes here -->
+      <!-- Real ad will load here -->
     </div>
 
     <div class="loader"></div>
@@ -70,20 +70,25 @@
     if (!sessionStorage.getItem(adKey)) {
       sessionStorage.setItem(adKey, 'true');
 
-      // Insert your real ad script here
+      // Example: Adsterra interstitial / PropellerAds safe snippet
       const adSlot = document.getElementById('ad-slot');
-      adSlot.innerHTML = '<iframe src="https://example-ad-network.com/ad.html" width="300" height="250" frameborder="0"></iframe>';
+      adSlot.innerHTML = `
+        <script type="text/javascript" src="https://www.example-ad-network.com/serve-ad.js"></script>
+        <noscript>
+          <iframe src="https://www.example-ad-network.com/serve-ad.html" width="300" height="250" frameborder="0"></iframe>
+        </noscript>
+      `;
     } else {
       document.getElementById('ad-slot').innerHTML = 'Advertisement already shown';
     }
 
-    // Smart on-click pop-up (only once per session)
+    // Smart on-click pop-up (fires once per session)
     const popKey = 'popShown';
     if (!sessionStorage.getItem(popKey)) {
       sessionStorage.setItem(popKey, 'true');
       document.addEventListener('click', () => {
-        window.open('https://example-pop-network.com/pop.html', '_blank', 'width=600,height=400');
-      }, { once: true }); // fires only on first click
+        window.open('https://www.example-pop-network.com/pop.html', '_blank', 'width=600,height=400');
+      }, { once: true });
     }
 
     // Redirect to the actual game after 4 seconds
